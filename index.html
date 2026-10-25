@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 1. HTML Metadata -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VVANS — Eyewear</title>
+
+  <!-- 2. Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- 3. Custom CSS - loaded AFTER Bootstrap -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ================= TOP ANNOUNCEMENT BANNER ================= -->
+  <aside class="bg-dark text-white text-center py-2 small" aria-label="Store Announcement">
+    <div class="container">
+      <span>Complimentary Home Try-On • Free 2-day shipping & returns on all orders</span>
+    </div>
+  </aside>
+
+  <!-- ================= 1. NAVBAR ================= -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom py-3" id="mainNavbar">
+      <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand fw-bold fs-3 text-dark d-flex align-items-center gap-2" href="#home">
+          <i class="bi bi-eyeglasses"></i>
+          <span>VVANS</span>
+        </a>
+
+        <!-- Responsive Mobile Toggler -->
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-dark"></i>
+        </button>
+
+        <!-- Navbar Links & Actions -->
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-medium active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-medium" href="#products">Eyeglasses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-medium" href="#products">Sunglasses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-medium" href="#products">New Arrivals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-medium" href="#reviews">Reviews</a>
+            </li>
+          </ul>
+
+          <!-- Right Action Controls: Log In, Create Account & Offcanvas Cart Button -->
+          <div class="d-flex align-items-center gap-2 flex-wrap mt-3 mt-lg-0">
+            <!-- Log In Modal Trigger -->
+            <button class="btn btn-outline-dark btn-sm rounded-pill px-3" type="button" data-bs-toggle="modal"
+              data-bs-target="#loginModal">
+              <i class="bi bi-person me-1"></i> Log In
+            </button>
+
+            <!-- Create Account Modal Trigger -->
+            <button class="btn btn-dark btn-sm rounded-pill px-3" type="button" data-bs-toggle="modal"
+              data-bs-target="#signupModal">
+              Create Account
+            </button>
+
+            <!-- Cart Button opens Bootstrap Offcanvas from the right -->
+            <button class="btn btn-outline-dark btn-sm rounded-pill px-3 position-relative" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+              <i class="bi bi-bag me-1"></i> Cart
+              <span id="cartCount" class="badge bg-danger rounded-pill ms-1">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container mt-3"><div id="notice" class="alert d-none" role="status" aria-live="polite"></div>
+  <div class="d-flex align-items-center gap-2"><span id="accountStatus">Not logged in</span>
+  <button id="logoutButton" class="btn btn-sm btn-outline-dark d-none">Log out</button></div></div>
+  <main>
+    <!-- ================= 2. HERO SECTION ================= -->
+    <section class="py-5 border-bottom bg-white" id="home">
+      <div class="container py-lg-4">
+        <div class="row align-items-center gy-4">
+          <!-- Left Column -->
+          <div class="col-lg-6">
+            <span class="badge bg-light text-dark border rounded-pill px-3 py-2 text-uppercase mb-3 fw-semibold small">
+              Spring 2026 Collection
+            </span>
+            <h1 class="display-4 fw-bold mb-3">
+              Thoughtfully crafted frames for everyday vision.
+            </h1>
+            <p class="lead text-secondary mb-4">
+              Starting at $95 with premium prescription lenses included. Try 5 pairs at home for free before making up
+              your mind.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#products" class="btn btn-dark btn-lg rounded-pill px-4">
+                Shop Eyeglasses
+              </a>
+              <a href="#products" class="btn btn-outline-dark btn-lg rounded-pill px-4">
+                Shop Sunglasses
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Eyewear Image -->
+          <div class="col-lg-6 text-center">
+            <div class="p-3 border rounded-3 bg-light">
+              <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=800&auto=format&fit=crop&q=80"
+                alt="VVANS Designer Eyewear" class="img-fluid rounded-2 hero-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. PRODUCT LISTING ================= -->
+    <section class="py-5" id="products">
+      <div class="container py-lg-3">
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold">Find Your Frame</h2>
+          <p class="text-secondary mb-0">Handcrafted acetate & titanium frames with anti-reflective coating.</p>
+        </div>
+
+        <div class="row g-4"><p class="text-secondary">Loading products…</p></div>
+      </div>
+    </section>
+
+    <!-- ================= 4. REVIEWS ================= -->
+    <section class="py-5 bg-white border-top border-bottom" id="reviews">
+      <div class="container py-lg-3">
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold">Customer Reviews</h2>
+          <p class="text-secondary mb-0">Real opinions from customers wearing VVANS frames across the country.</p>
+        </div>
+
+        <!-- 3 Review Cards -->
+        <div class="row g-4">
+          <!-- Review 1 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border rounded-3 p-4 bg-light">
+              <div class="text-warning small mb-2">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="mb-3 fst-italic text-dark">
+                "Beautiful frames and very comfortable. Getting prescription lenses included at this price is
+                unmatched."
+              </p>
+              <div class="mt-auto border-top pt-2">
+                <div class="fw-bold text-dark">Ayesha Khan</div>
+                <small class="text-secondary d-block">Purchased: Nisha Frame</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border rounded-3 p-4 bg-light">
+              <div class="text-warning small mb-2">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="mb-3 fst-italic text-dark">
+                "Lightweight, sturdy, and the acetate feels like pure luxury. Wearing the Vanos frame every day at the
+                office."
+              </p>
+              <div class="mt-auto border-top pt-2">
+                <div class="fw-bold text-dark">Marcus Vance</div>
+                <small class="text-secondary d-block">Purchased: Vanos Frame</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border rounded-3 p-4 bg-light">
+              <div class="text-warning small mb-2">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="mb-3 fst-italic text-dark">
+                "The home try-on was super easy and shipping was incredibly fast. Ruby fits my narrow face perfectly."
+              </p>
+              <div class="mt-auto border-top pt-2">
+                <div class="fw-bold text-dark">Elena Rostova</div>
+                <small class="text-secondary d-block">Purchased: Ruby Frame</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-4">
+      <h2 class="h4">Customer reviews</h2>
+      <div id="savedReviews" class="row g-3 mb-3"></div>
+      <form id="reviewForm" class="card card-body">
+        <label for="reviewRating" class="form-label">Your rating</label>
+        <select id="reviewRating" class="form-select mb-2"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select>
+        <label for="reviewComment" class="form-label">Your review</label>
+        <textarea id="reviewComment" class="form-control mb-2" maxlength="1000" required></textarea>
+        <button class="btn btn-outline-dark align-self-start">Submit review</button>
+      </form>
+      <h2 class="h4 mt-4">Your orders</h2><div id="orderHistory">Log in to view your orders.</div>
+    </section>
+    <!-- ================= 10. CHECKOUT ================= -->
+    <section class="py-5 bg-white" id="checkout">
+      <div class="container py-lg-3">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold">Checkout</h2>
+          <p class="text-secondary mb-0">Fill out your shipping information to complete your order.</p>
+        </div>
+
+        <!-- Two-Column Bootstrap Layout -->
+        <div class="row g-4">
+          <!-- Left Side — Customer Information -->
+          <div class="col-12 col-lg-7">
+            <div class="card border rounded-3 p-4 bg-light h-100">
+              <h3 class="h5 fw-bold mb-4 border-bottom pb-2">Customer Information</h3>
+              <form id="checkoutForm">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="checkoutFullName" class="form-label small fw-semibold">Full Name *</label>
+                    <input type="text" class="form-control" id="checkoutFullName" placeholder="Ayesha Khan" required />
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="checkoutEmailAddr" class="form-label small fw-semibold">Email *</label>
+                    <input type="email" class="form-control" id="checkoutEmailAddr" placeholder="ayesha@example.com"
+                      required />
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="checkoutPhone" class="form-label small fw-semibold">Phone *</label>
+                    <input type="tel" class="form-control" id="checkoutPhone" placeholder="+1 (555) 019-2834"
+                      required />
+                  </div>
+
+                  <div class="col-12">
+                    <label for="checkoutAddress" class="form-label small fw-semibold">Address *</label>
+                    <input type="text" class="form-control" id="checkoutAddress" placeholder="123 Park Avenue, Apt 4B"
+                      required />
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="checkoutCity" class="form-label small fw-semibold">City *</label>
+                    <input type="text" class="form-control" id="checkoutCity" placeholder="New York" required />
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label for="checkoutPostalCode" class="form-label small fw-semibold">Postal Code *</label>
+                    <input type="text" class="form-control" id="checkoutPostalCode" placeholder="10001" required />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Side — Order Summary -->
+          <div class="col-12 col-lg-5">
+            <div class="card border rounded-3 p-4 bg-light h-100">
+              <h3 class="h5 fw-bold mb-4 border-bottom pb-2">Order Summary</h3>
+
+              <div id="orderSummary">Your cart is empty.</div>
+              <button type="submit" form="checkoutForm" class="btn btn-dark w-100 rounded-pill py-2 fw-semibold">Place Order</button>
+              <p class="small text-muted mt-3">Cash on delivery · Demo checkout. No online payment is collected.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 5. LOGIN MODAL ================= -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-3 border-0 shadow">
+        <div class="modal-header border-bottom-0 pb-0">
+          <div>
+            <h5 class="modal-title font-serif fw-bold h4 text-dark" id="loginModalLabel">Sign In to VVANS</h5>
+            <p class="text-secondary small mb-0">Sign in to access your account and saved frames.</p>
+          </div>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 pt-3">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label small fw-semibold">Email Address</label>
+              <input type="email" class="form-control" id="loginEmail" placeholder="you@domain.com" required />
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label for="loginPassword" class="form-label small fw-semibold mb-0">Password</label>
+                <a href="#" class="small text-decoration-none text-muted">Forgot Password?</a>
+              </div>
+              <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required />
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="rememberMeCheck" checked />
+              <label class="form-check-label small text-secondary" for="rememberMeCheck">
+                Remember Me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 rounded-pill py-2">
+              Sign In
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 6. SIGNUP MODAL ================= -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-3 border-0 shadow">
+        <div class="modal-header border-bottom-0 pb-0">
+          <div>
+            <h5 class="modal-title font-serif fw-bold h4 text-dark" id="signupModalLabel">Create Your VVANS Account</h5>
+            <p class="text-secondary small mb-0">Create an account to track orders and save your favorite frames.</p>
+          </div>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 pt-3">
+          <form id="signupForm">
+            <div class="mb-3">
+              <label for="signupName" class="form-label small fw-semibold">Full Name</label>
+              <input type="text" class="form-control" id="signupName" placeholder="Jane Doe" required />
+            </div>
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label small fw-semibold">Email Address</label>
+              <input type="email" class="form-control" id="signupEmail" placeholder="jane@example.com" required />
+            </div>
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label small fw-semibold">Password</label>
+              <input type="password" class="form-control" id="signupPassword" placeholder="Minimum 6 characters"
+                required />
+            </div>
+            <div class="mb-4">
+              <label for="signupConfirmPassword" class="form-label small fw-semibold">Confirm Password</label>
+              <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Re-enter password"
+                required />
+            </div>
+            <button type="submit" class="btn btn-dark w-100 rounded-pill py-2">
+              Create Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 8 & 9. DISPLAY CART & EDIT CART (BOOTSTRAP OFFCANVAS) ================= -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="shoppingCart" aria-labelledby="shoppingCartLabel">
+    <!-- Offcanvas Header -->
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title font-serif fw-bold" id="shoppingCartLabel">Your Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div id="cartItems" class="offcanvas-body">Your cart is empty.</div>
+    <div class="border-top p-3 bg-light">
+      <div id="cartTotals" class="mb-3"></div>
+      <a href="#checkout" class="btn btn-dark w-100 rounded-pill" data-bs-dismiss="offcanvas">Checkout</a>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-dark text-secondary py-5 border-top">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Brand Summary -->
+        <div class="col-12 col-md-4">
+          <a class="text-white text-decoration-none fs-3 fw-bold d-inline-block mb-2 font-serif" href="#home">
+            VVANS
+          </a>
+          <p class="small text-secondary mb-0">
+            Modern designer eyewear crafted with premium materials. Inspired by timeless aesthetics, designed for clear
+            vision.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-2">
+          <h4 class="h6 text-white text-uppercase mb-3 font-serif">Shop</h4>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="#products" class="text-secondary text-decoration-none">Eyeglasses</a></li>
+            <li class="mb-2"><a href="#products" class="text-secondary text-decoration-none">Sunglasses</a></li>
+            <li class="mb-2"><a href="#products" class="text-secondary text-decoration-none">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h4 class="h6 text-white text-uppercase mb-3 font-serif">Company</h4>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="#reviews" class="text-secondary text-decoration-none">Reviews</a></li>
+            <li class="mb-2"><a href="#home" class="text-secondary text-decoration-none">Our Story</a></li>
+            <li class="mb-2"><a href="#home" class="text-secondary text-decoration-none">Locations</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="col-12 col-md-4">
+          <h4 class="h6 text-white text-uppercase mb-3 font-serif">Customer Support</h4>
+          <p class="small text-secondary mb-2">
+            Questions about your prescription or Home Try-On? Contact our optical team 24/7.
+          </p>
+          <small class="text-muted">© 2026 VVANS Eyewear Inc. All rights reserved.</small>
+        </div>
+      </div>
+
+      <hr class="border-secondary opacity-25" />
+
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 small text-secondary">
+        <span>VVANS Eyewear · Lab 7</span>
+        <span>Eyewear for every day</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 JavaScript Bundle (For responsive navbar collapse, modals & offcanvas side cart) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

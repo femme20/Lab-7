@@ -1,0 +1,94 @@
+/* ==========================================================================
+   VVANS Eyewear — Minimalist Bootstrap 5 Custom Styling
+   (Kept minimal per lab guidelines; Bootstrap handles all layout & components)
+   ========================================================================== */
+
+/* Brand Base & Warm Cream Background */
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: #faf8f5;
+  color: #192024;
+}
+
+/* Editorial serif headings inspired by Warby Parker */
+.font-serif,
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3,
+.navbar-brand {
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.01em;
+}
+
+/* Hero image sizing & containment */
+.hero-img {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Product Card — Warby Parker Style */
+.product-card {
+  background-color: #fbf9f6;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Image containment with seamless studio background */
+.product-img-wrap {
+  position: relative;
+  padding: 3rem 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbf9f6;
+}
+
+.product-img-wrap img {
+  max-height: 180px;
+  width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.02);
+}
+
+/* Color Swatches */
+.swatch-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.swatch-dot:hover {
+  transform: scale(1.15);
+}
+
+.swatch-dot.active {
+  box-shadow: 0 0 0 2px #fbf9f6, 0 0 0 3px #192024;
+}
+
+/* Offcanvas cart thumbnail */
+.cart-item-thumb {
+  width: 70px;
+  height: 50px;
+  object-fit: contain;
+  background-color: #fbf9f6;
+  mix-blend-mode: multiply;
+}
