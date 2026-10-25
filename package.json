@@ -1,0 +1,1 @@
+{"name":"lab7-student-management","version":"1.0.0","private":true,"scripts":{"start":"node 01-memory-api.js"},"engines":{"node":">=18"}}
